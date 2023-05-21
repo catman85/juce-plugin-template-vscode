@@ -1,3 +1,10 @@
+/.vscode/settings.json
+.DS_Store
+
+# handled by Projucer, and xcode
+/Builds
+/JuceLibraryCode
+
 # Prerequisites
 *.d
 

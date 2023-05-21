@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false,
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "linux": {
+                "MIMode": "gdb",
+                "program": "${workspaceRoot}/Builds/LinuxMakefile/build/${workspaceFolderBasename}"
+            },
+            "osx": {
+                "program": "${workspaceRoot}/Builds/MacOSX/build/Debug/${workspaceFolderBasename}.app/Contents/MacOS/${workspaceFolderBasename}",
+                "args": [
+                    "${workspaceFolder}/${workspaceFolderBasename}.filtergraph"
+                ],
+                "MIMode": "lldb",
+            },
+            "preLaunchTask": "Build Debug"
+        },
+        {
+            "name": "C++ Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceRoot}/a.out",
+            "processId": "${command:pickProcess}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "linux": {
+                "MIMode": "gdb",
+            },
+            "osx": {
+                "MIMode": "lldb"
+            }
+        }
+    ]
+}
