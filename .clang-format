@@ -20,3 +20,6 @@ AlwaysBreakAfterReturnType: TopLevelDefinitions
 AlignConsecutiveMacros: Consecutive
 # use \n instead of \r\n
 UseCRLF: false
+# #if statement indentation
+PPDirectiveIndentStyle: PPDIS_BeforeHash
+InsertBraces: true

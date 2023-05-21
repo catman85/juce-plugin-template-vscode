@@ -20,6 +20,7 @@ A template repo for a juce plugin with VSCode support for Linux and Mac. With a 
     1. JUCE modules
 1. Create a new project from Projucer, give it a name, make sure the Linux-Makefile is checked, Xcode (macOS) in the Exporters section, 
 1. Or open an existing one. like this repo. (Open the .jucer file)
+1. The way this `c_cpp_properties.json` are set the binary names defined for each exporter in projucer must match the project folder's name.
 
 ### Linux Manual build
 1. Go to your project foler and `Builds/LinuxMakeFile`. Run `make CONFIG=Debug` to make sure you can build the file, and not missing any dependencies.
