@@ -5,10 +5,8 @@
             "name": "C++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
-            "environment": [],
             "externalConsole": false,
             "setupCommands": [
                 {
@@ -23,19 +21,16 @@
             },
             "osx": {
                 "program": "${workspaceRoot}/Builds/MacOSX/build/Debug/${workspaceFolderBasename}.app/Contents/MacOS/${workspaceFolderBasename}",
-                "args": [
-                    "${workspaceFolder}/${workspaceFolderBasename}.filtergraph"
-                ],
                 "MIMode": "lldb",
             },
             "preLaunchTask": "Build Debug"
         },
         {
-            "name": "C++ Attach",
+            "name": "AudioPluginHost Attach",
             "type": "cppdbg",
-            "request": "attach",
+            "request": "launch",
             "program": "enter program name, for example ${workspaceRoot}/a.out",
-            "processId": "${command:pickProcess}",
+            "cwd": "${workspaceRoot}",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -45,10 +40,18 @@
             ],
             "linux": {
                 "MIMode": "gdb",
+                "program": "/home/jim/JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost",
+                "args": [
+                    "${workspaceFolder}/${workspaceFolderBasename}.filtergraph"
+                ],
             },
             "osx": {
-                "MIMode": "lldb"
-            }
+                "MIMode": "lldb",
+                "args": [
+                    "${workspaceFolder}/${workspaceFolderBasename}.filtergraph"
+                ],
+            },
+            "preLaunchTask": "Build Debug"
         }
     ]
 }

@@ -57,6 +57,12 @@ public:
     
 
 private:
+
+    using Filter = juce::dsp::IIR::Filter<float>;
+    using CutFilter = juce::dsp::ProcessorChain<Filter, Filter, Filter, Filter>;
+    using EQMonoChain = juce::dsp::ProcessorChain<CutFilter, Filter, CutFilter>;
+    EQMonoChain leftChain,rightChain;
+
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PlugintestAudioProcessor)
 };

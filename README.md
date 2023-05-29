@@ -8,6 +8,7 @@ A template repo for a juce plugin with VSCode support for Linux and Mac. With a 
 - C++ IntelliSense
 - debugging
 - .vscode automations
+- AudioPluginHost launch configuration
 
 ## Setup guide
 ### Juce and Projucer 
@@ -26,6 +27,7 @@ A template repo for a juce plugin with VSCode support for Linux and Mac. With a 
 1. Go to your project foler and `Builds/LinuxMakeFile`. Run `make CONFIG=Debug` to make sure you can build the file, and not missing any dependencies.
 1. Execute the executable located in `Builds/LinuxMakefile/build/DemoApp` or check that your vst is created, depending on the options you set in Projucer
 1. `sudo pacman -S gdb` for the debugger to work
+1. If you run into problems while building the AudioPluginHost, in order to use the APH launch config, make sure you have installed the `ladspa` package.
 
 ### Mac build
 Open and run the app once from xcode to generate some files that are necessary for the build task to run.
