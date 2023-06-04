@@ -9,6 +9,37 @@
 #pragma once
 #include <JuceHeader.h>
 
+using Filter = juce::dsp::IIR::Filter<float>;
+using Coefficients = Filter::CoefficientsPtr;
+
+enum Slope
+{
+    Slope_12,
+    Slope_24,
+    Slope_36,
+    Slope_48
+};
+
+struct ChainSettings
+{
+    float peakFreq { 0 }, peakGainInDecibels{ 0 }, peakQuality {1.f};
+    float lowCutFreq { 0 }, highCutFreq { 0 };
+    
+    Slope lowCutSlope { Slope::Slope_12 }, highCutSlope { Slope::Slope_12 };
+    
+    bool lowCutBypassed { false }, peakBypassed { false }, highCutBypassed { false };
+};
+
+
+enum ChainPositions
+{
+    LowCut,
+    Peak,
+    HighCut
+};
+
+ChainSettings getChainSettings(juce::AudioProcessorValueTreeState& apvts);
+
 class PlugintestAudioProcessor  : public juce::AudioProcessor
                             #if JucePlugin_Enable_ARA
                              , public juce::AudioProcessorARAExtension
@@ -57,8 +88,6 @@ public:
     
 
 private:
-
-    using Filter = juce::dsp::IIR::Filter<float>;
     using CutFilter = juce::dsp::ProcessorChain<Filter, Filter, Filter, Filter>;
     using EQMonoChain = juce::dsp::ProcessorChain<CutFilter, Filter, CutFilter>;
     EQMonoChain leftChain,rightChain;

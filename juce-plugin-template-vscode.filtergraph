@@ -36,7 +36,7 @@
           uiLastY_Generic="306" uiopen_Generic="0">
     <PLUGIN name="plugin-test" format="VST3" category="Fx" manufacturer="yourcompany"
             version="1.0.0" file="/home/jim/.vst3/juce-plugin-template-vscode.vst3"
-            uniqueId="f897a722" isInstrument="0" fileTime="1883bbb9c38" infoUpdateTime="188650fc3bf"
+            uniqueId="f897a722" isInstrument="0" fileTime="1883bbb9c38" infoUpdateTime="18883b0fb5c"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="acf7b341"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -49,14 +49,14 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="6" x="0.5024999999999999" y="0.3830645161290323" useARA="0"
-          uiLastX_Generic="349" uiLastY_Generic="351" uiopen_Generic="0">
+  <FILTER uid="6" x="0.3225" y="0.2741935483870968" useARA="0" uiLastX_Generic="466"
+          uiLastY_Generic="235" uiopen_Generic="0">
     <PLUGIN name="noise_white" descriptiveName="" format="LADSPA" category="Effect"
             manufacturer="Richard Furse (LADSPA example plugins)" version="1.1"
             file="/usr/lib/ladspa/noise.so" uniqueId="41a" isInstrument="0"
-            fileTime="186f5f60ec8" infoUpdateTime="188650fc3c0" numInputs="0"
+            fileTime="186f5f60ec8" infoUpdateTime="18883b0fb5c" numInputs="0"
             numOutputs="1" isShell="0" hasARAExtension="0" uid="41a"/>
-    <STATE>4.8Znb8.</STATE>
+    <STATE>4.n7ZH8.</STATE>
     <LAYOUT>
       <INPUTS>
         <BUS index="0" layout="disabled"/>
@@ -69,5 +69,4 @@
   <CONNECTION srcFilter="5" srcChannel="0" dstFilter="3" dstChannel="0"/>
   <CONNECTION srcFilter="5" srcChannel="1" dstFilter="3" dstChannel="1"/>
   <CONNECTION srcFilter="6" srcChannel="0" dstFilter="5" dstChannel="0"/>
-  <CONNECTION srcFilter="6" srcChannel="0" dstFilter="5" dstChannel="1"/>
 </FILTERGRAPH>
